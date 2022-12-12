@@ -1,0 +1,8 @@
+**/build/
+**/.vscode/
+**/.cache/
+**/.kdev4/
+**/.DS_Store
+cscope.*
+tags
+fastfetch.kdev4

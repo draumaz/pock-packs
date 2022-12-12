@@ -4,7 +4,7 @@ source=(https://github.com/dylanaraps/${name}/archive/refs/tags/${version}.tar.g
 
 build() {
 
-  install -dm755 "${PKG}"/usr/bin
-  mv ${name}-${version}/${name} "${PKG}"/usr/bin
+  install -dm755 "${PKG}"/"${POCK_SYS_PFX}"/bin
+  mv ${name}-${version}/${name} "${PKG}"/"${POCK_SYS_PFX}"/bin
 
 }
