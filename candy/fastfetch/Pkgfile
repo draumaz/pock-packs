@@ -16,7 +16,7 @@ build() {
   make install DESTDIR="${PKG}/${POCK_SYS_PFX}"
 
   for i in etc usr/share; do
-    rm -r "${PKG}"/$i
+    rm -r "${PKG}/${POCK_SYS_PFX}"/$i
   done
 
 }
