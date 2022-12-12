@@ -1,0 +1,15 @@
+name=openssl
+version=3.0.7
+source=(https://www.${name}.org/source/${name}-${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./config \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
