@@ -1,6 +1,6 @@
-name=curl
-version=7.86.0
-source=(https://${name}.se/download/${name}-${version}.tar.gz)
+name=links
+version=2.28
+source=(http://${name}.twibright.com/download/${name}-${version}.tar.gz)
 
 build() {
 
