@@ -1,0 +1,15 @@
+name=pv
+version=1.6.20
+source=(http://www.ivarch.com/programs/sources/${name}-${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
