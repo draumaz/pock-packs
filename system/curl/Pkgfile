@@ -1,0 +1,16 @@
+name=curl
+version=7.86.0
+source=(https://curl.se/download/${name}-${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}" \
+    --with-openssl
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
