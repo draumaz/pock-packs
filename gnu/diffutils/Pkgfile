@@ -1,0 +1,15 @@
+name=diffutils
+version=3.8
+source=(https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.xz)
+
+build() {
+  
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
