@@ -1,10 +1,5 @@
-# Description: A pretty system information tool written in POSIX sh.
-# URL:         https://github.com/dylanaraps/pfetch
-# Maintainer:  draumaz
-
 name=neofetch
 version=7.1.0
-release=1
 source=(https://github.com/dylanaraps/${name}/archive/refs/tags/${version}.tar.gz)
 
 build() {

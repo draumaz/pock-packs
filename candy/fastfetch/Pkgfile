@@ -1,10 +1,5 @@
-# Description: Like neofetch, but much faster because written in C.
-# URL:         https://github.com/LinusDierheimer/fastfetch
-# Maintainer:  draumaz
-
 name=fastfetch
 version=1.7.5
-release=1
 source=(https://github.com/LinusDierheimer/${name}/archive/refs/tags/${version}.tar.gz)
 
 build() {
