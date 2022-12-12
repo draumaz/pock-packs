@@ -1,0 +1,15 @@
+name=nasm
+version=2.16rc12
+source=(https://www.${name}.us/pub/${name}/releasebuilds/${version}/${name}-${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
