@@ -1,0 +1,15 @@
+name=tar
+version=1.34
+source=(https://ftp.gnu.org/gnu/${name}/${name}-${version}.tar.gz)
+
+build() {
+  
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
