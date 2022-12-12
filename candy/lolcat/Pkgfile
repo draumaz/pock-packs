@@ -1,0 +1,12 @@
+name=lolcat
+version=1.3
+source=(https://github.com/jaseg/${name}/archive/refs/tags/v${version}.tar.gz)
+
+build() {
+
+  cd "${name}"-"${version}"
+  
+  install -dm755 "${PKG}${POCK_SYS_PFX}/bin"
+  make install DESTDIR="${PKG}${POCK_SYS_PFX}/bin"
+
+}
