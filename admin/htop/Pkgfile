@@ -1,0 +1,15 @@
+name=htop
+version=3.2.1
+source=(https://github.com/htop-dev/${name}/archive/refs/tags/${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  autoreconf -vfi
+  ./configure --prefix=/opt/local
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}

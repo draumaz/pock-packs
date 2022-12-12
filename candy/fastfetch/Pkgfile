@@ -1,0 +1,27 @@
+# Description: Like neofetch, but much faster because written in C.
+# URL:         https://github.com/LinusDierheimer/fastfetch
+# Maintainer:  draumaz
+
+name=fastfetch
+version=1.7.5
+release=1
+source=(https://github.com/LinusDierheimer/${name}/archive/refs/tags/${version}.tar.gz)
+
+build() {
+
+  cd ${name}-${version}
+  mkdir build && cd build
+
+  cmake ..
+  cmake --build . \
+    --target fastfetch \
+    --target flashfetch \
+    -j $JOBS
+
+  make DESTDIR="${PKG}" install
+
+  for i in etc usr/share; do
+    rm -r "${PKG}"/$i
+  done
+
+}
