@@ -13,7 +13,7 @@ build() {
     --target flashfetch \
     -j $JOBS
 
-  make DESTDIR="${PKG}" install
+  make install DESTDIR="${PKG}/${POCK_SYS_PFX}"
 
   for i in etc usr/share; do
     rm -r "${PKG}"/$i
