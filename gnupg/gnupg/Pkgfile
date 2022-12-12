@@ -1,0 +1,15 @@
+name=gnupg
+version=2.3.8
+source=(https://www.${name}.org/ftp/gcrypt/${name}/${name}-${version}.tar.bz2)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
