@@ -1,6 +1,6 @@
 name=curl
 version=7.86.0
-source=(https://curl.se/download/${name}-${version}.tar.gz)
+source=(https://${name}.se/download/${name}-${version}.tar.gz)
 
 build() {
 
