@@ -1,0 +1,15 @@
+name=git
+version=2.38.2
+source=(https://mirrors.edge.kernel.org/pub/software/scm/${name}/${name}-${version}.tar.gz)
+
+build() {
+
+  cd "${name}-${version}"
+  
+  ./configure \
+    --prefix="${POCK_SYS_PFX}"
+
+  make -j $JOBS
+  make install DESTDIR="${PKG}"
+
+}
